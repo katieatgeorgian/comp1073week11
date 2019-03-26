@@ -39,6 +39,8 @@
             console.log(iScreamInc);
             //populate the header (from step 9)
             populateHeader(iScreamInc); //iScreamInc is the json object = access company name
+            //show the top flavours into the section created above
+            showTopFlavors(iScreamInc);//from step 10
         }
         
 		/* STEP 9: Build out the populateHeader() function */
@@ -53,22 +55,33 @@
         }
         
 		/* STEP 10a: Assemble the showTopFlavors() function */
-
-			// STEP 10b: Bind the JSON topFlavors object to a var
-
+        function showTopFlavors(jsonObj) { //accept json object as argument
+        
+			// STEP 10b: Bind the JSON topFlavors object to a var - will grab topFlavors entire object
+            var topFlavors = jsonObj["topFlavors"];
+            
 			// STEP 10c: Loop through the topFlavors object
+            for (var i = 0; i < topFlavors.length; i++){
+                    
+				// STEP 10d: build HTML elements for the content - set out an article, h2 and image for each item
+                var article = document.createElement("article"); //create DOM element ready to be inserted into DOM
+                var h2 = document.createElement("h2");
+                var img = document.createElement("img");
+                
+				// STEP 10e: Set the textContent property for each of the above elements (except the UL), based on the JSON content -- populate each of above created vars with info from json file
+                h2.textContent = topFlavors[i].name; //i is for first of topFlavors, then what value in each flavour
+                img.setAttribute("src", "images/" + topFlavors[i].image); //setting the source, then source is in the images directory with the topFlavor info called image
 
-				// STEP 10d: build HTML elements for the content
-
-				// STEP 10e: Set the textContent property for each of the above elements (except the UL), based on the JSON content
-
-				// STEP 10f: Build a loop for the ingredients array in the JSON
-
+				// STEP 10f: Build a loop for the ingredients array in the JSON -- skipping for time
+                
 				// STEP 10g: Append each of the above HTML elements to the ARTICLE element
-
+                article.appendChild(h2);//h2 is a variable
+                article.appendChild(img);//img is a variable
+                
 				// STEP 10h: Append each complete ARTICLE element to the SECTION element
-
-
+                section.appendChild(article); //not in quotes because variable - when create an element you put that in quotes
+            }; 
+        };
 		// This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
 
 		// A special thanks to https://openclipart.org/detail/285225/ice-cream-cones for the awesome ice cream cone illustrations
