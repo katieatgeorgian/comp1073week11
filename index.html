@@ -37,10 +37,21 @@
         request.onload = function() {
             var iScreamInc = request.response; //capture response from request object json in variable -- response is what azure gave request object - taking response json and attaching to variable
             console.log(iScreamInc);
+            //populate the header (from step 9)
+            populateHeader(iScreamInc); //iScreamInc is the json object = access company name
         }
         
 		/* STEP 9: Build out the populateHeader() function */
-
+        //grab company name and output to screen as h1 - section output three cards feature top flavours
+        function populateHeader(jsonObj) { //call this function and pass in json to function
+            //creates h1 but doesn't do anything
+            var header1 = document.createElement("h1"); 
+            //set text
+            header1.textContent = jsonObj["companyName"]; //call up json object - company name in iScream file
+            //attach the new h1 to the header
+            header.appendChild(header1);
+        }
+        
 		/* STEP 10a: Assemble the showTopFlavors() function */
 
 			// STEP 10b: Bind the JSON topFlavors object to a var
