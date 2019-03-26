@@ -10,22 +10,35 @@
 
 <body>
 	<!-- STEP 1: Build out a HEADER and a SECTION element -->
-
+    <header></header>
+    
+    <section></section>
 	<script>
 		/* STEP 2: Bind the HEADER and the SECTION elements above to variables */
-
-		/* STEP 3: Store the URL of a JSON file in a variable */
-
-		/* STEP 4: Create a new XHR object */
-
-		/* STEP 5: Open a new request using the request() method */
-
-		/* STEP 6: Set JavaScript to accept JSON from the server */
-
+        var header = document.querySelector("header");
+        var section = document.querySelector("section");
+        
+		/* STEP 3: Store the URL of a JSON file in a variable (Scott's server on azure */
+        var requestURL = "https://comp1073smccrindle.azurewebsites.net/js/i-scream.json"; //script will hit up Scott's server
+        
+		/* STEP 4: Create a new XHR object --old way of doing (next week will do new way) */
+        var request = new XMLHttpRequest(); //prototype already resides no new constructor - uses http protocol in background and expecting xml but going to send it json
+        
+		/* STEP 5: Open a new request using the request() method -- open up a channel to communicate asynchrously*/
+        request.open("GET", requestURL); // GET method like in php - where is server - string above == open channel communicating with Scott's server
+        
+		/* STEP 6: Set JavaScript to accept JSON from the server --expecting xml, have to tell not getting what expecting */
+        request.responseType = "json"; //getting json instead
+        
 		/* STEP 7: Send the request with the send() method */
-
-		/* STEP 8: Add an event handler that listens for the onload event of the JSON file/object */
-
+        request.send(); //hitting server
+        
+		/* STEP 8: Add an event handler that listens for the onload event of the JSON file/object - need to listen for response from server - when event fires capture that response the json object*/
+        request.onload = function() {
+            var iScreamInc. = request.response; //capture response from request object json in variable -- response is what azure gave request object - taking response json and attaching to variable
+            console.log(iScreamInc);
+        }
+        
 		/* STEP 9: Build out the populateHeader() function */
 
 		/* STEP 10a: Assemble the showTopFlavors() function */
