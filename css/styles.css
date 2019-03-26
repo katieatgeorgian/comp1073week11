@@ -34,13 +34,13 @@ section {
 section article {
 	border: 1px solid black;
 	box-shadow: 0 2px 14px grey;
-	padding: 2.5%;
+	padding: 2%;
 	width: 20%
 }
 article img {
 	display: block;
-	height: 150px;
-	width: 90px;
+	height: aut0;
+	width: 50px;
 }
 section p {
   margin: 5px 0;
