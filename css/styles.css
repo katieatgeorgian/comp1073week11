@@ -27,6 +27,7 @@ header p {
 
 /* section styles */
 section {
+    margin: 0 auto;
 	display: flex;
 	justify-content: space-between;
 	margin-bottom: 5rem;
@@ -39,8 +40,8 @@ section article {
 }
 article img {
 	display: block;
-	height: aut0;
-	width: 50px;
+	height: auto;
+	width: 60px;
 }
 section p {
   margin: 5px 0;
