@@ -36,6 +36,28 @@
         "candy sprinkles"
       ],
       "image": "strawberry-sprinkle.svg"
+    },
+    {
+      "name": "Green Tea Sorbet",
+      "calories": 210,
+      "type": "sorbet",
+      "ingredients": [
+        "green tea",
+        "sugar",
+        "candy sprinkles"
+      ],
+      "image": "ice-cream-xtra1.svg"
+    },
+    {
+      "name": "Cookies 'n Cream",
+      "calories": 455,
+      "type": "ice cream",
+      "ingredients": [
+        "oreo cookie bits",
+        "cream",
+        "chocolate chips"
+      ],
+      "image": "ice-cream-xtra2.svg"
     }
   ]
 }
